@@ -42,13 +42,7 @@ const onToggleCompleted = (data)=>{
 
 <style lang="scss" scoped>
 .todo-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: solid 1px rgba(0, 0, 0, 0.1);
-    background-color: white;
     padding: 15px 30px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    @include box-design
 }
 </style>

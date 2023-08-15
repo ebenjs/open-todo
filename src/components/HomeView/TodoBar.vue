@@ -1,6 +1,5 @@
 <script setup>
 import { computed } from 'vue'
-import { dummyTodos } from '@/data-provider/dummy-todos';
 
 const emit = defineEmits(['delete','toggle-completed'])
 const props = defineProps({
@@ -45,13 +44,7 @@ const deleteTodo = () => {
 }
 
 .btn-circle {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    padding: 0;
-    border-radius: 50%;
-    cursor: pointer;
+    @include circle-button
 }
 
 .btn-circle:not(:first-of-type) {

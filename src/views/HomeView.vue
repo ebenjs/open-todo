@@ -5,6 +5,8 @@ import MainContent from '../components/HomeView/MainContent.vue';
 import TodoList from '../components/HomeView/TodoList.vue';
 import AppBar from '../components/HomeView/AppBar.vue';
 
+import router from '../router/index.js';
+
 import { dummyTodos } from '../data-provider/dummy-todos';
 
 const currentTodo = ref({});
@@ -40,6 +42,13 @@ const onToggleCompleted = (data) => {
 const updateLocalStorage = (newData) => {
   localStorage.setItem('todos', JSON.stringify(newData))
 }
+
+router.afterEach((to, from) => {
+  const todos = localStorage.getItem('todos');
+  if (todos) {
+    dummyTodos.value = JSON.parse(todos);
+  }
+})
 
 </script>
 
