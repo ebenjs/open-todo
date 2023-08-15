@@ -1,8 +1,7 @@
 <script setup>
 
-import { ref, onMounted, watch  } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import Todo from './Todo.vue';
-import AppBar from './AppBar.vue';
 
 const filteredTodo = ref([])
 const currentTab = ref('all')
@@ -33,26 +32,25 @@ onMounted(() => {
     filteredTodo.value = props.todos
 })
 
-watch(props.todos, (newTodos) => {
-  console.log(`newtodo is: ${newTodos}`)
-  switch (currentTab.value) {
-    case 'all':
-      filterShowAll()
-      break
-    case 'completed':
-      filterCompleted()
-      break
-    case 'ongoing':
-      filterOngoing()
-      break
-  }
+watch(props.todos, () => {
+    switch (currentTab.value) {
+        case 'all':
+            filterShowAll()
+            break
+        case 'completed':
+            filterCompleted()
+            break
+        case 'ongoing':
+            filterOngoing()
+            break
+    }
 })
 
 </script>
 
 <template>
     <div class="todo-list">
-        <div class="filters">
+        <div>
             <div class="topcoat-button-bar__item">
                 <button class="topcoat-button-bar__button--large" @click="filterShowAll">Show all</button>
             </div>
@@ -69,18 +67,7 @@ watch(props.todos, (newTodos) => {
 
 <style lang="scss" scoped>
 .todo-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: solid 1px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    @include box-design;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-.filters{
-    width: 50px;
-    background-color: red;
 }
 </style>

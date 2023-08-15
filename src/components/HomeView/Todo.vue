@@ -18,22 +18,22 @@ const showDetails = () => {
 
 <style lang="scss" scoped>
 .title {
-    color: #555555;
+    color: $title-color;
 }
 
 .todo {
-    border: solid 1px rgba(0, 0, 0, 0.1);
+    border: $default-border;
     padding: 0px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .todo:hover {
-    background-color: rgba(50, 50, 50, 0.5);
-    color: white;
+    background-color: $hover-background;
+    color: $white;
 }
 
 .todo:hover>.title {
-    color: white;
+    color: $white;
 }
 </style>
