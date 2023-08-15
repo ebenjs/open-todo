@@ -36,7 +36,7 @@ const removeAll = () => {
 }
 
 .danger {
-    background-color: rgb(206, 32, 32);
+    background-color: $error-color;
     margin-left: 10px;
 }
 </style>

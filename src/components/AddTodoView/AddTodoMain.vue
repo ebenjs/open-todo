@@ -51,14 +51,8 @@ const addTodo = () => {
 
 <style lang="scss" scoped>
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: solid 1px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    @include box-design;
     padding: 15px 30px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .back-button{
