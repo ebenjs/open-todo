@@ -1,0 +1,10 @@
+@import '_colors.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+}
+
+.error{
+  color: $error-color;
+}
