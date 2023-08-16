@@ -10,7 +10,7 @@ const props = defineProps({
 })
 
 const renderCorrectIcon = computed(() => {
-    return props.todo.completed ? 'fas fa-uncheck' : 'fas fa-check'
+    return props.todo.completed ? 'fas fa-check-square' : 'fas fa-square'
 })
 
 const toggleCompleted = () => {
